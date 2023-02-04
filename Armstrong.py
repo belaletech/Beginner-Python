@@ -1,11 +1,20 @@
-no=int(input("Enter your number:\n"))
-cpy=no
-sum=0
-while no!=0:
-    r=no%10;
-    sum=sum+(r*r*r)
-    no=int(no/10)
-    if cpy==sum:
-        print("Given number is Armstrong")
-    else:
-        print("Not Armstrong")
+# Python program to check if the number is an Armstrong number or not
+
+# take input from the user
+num = int(input("Enter a number: "))
+
+# initialize sum
+sum = 0
+
+# find the sum of the cube of each digit
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+
+# display the result
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
